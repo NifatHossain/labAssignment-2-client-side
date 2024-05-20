@@ -3,12 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
 </head>
 <body>
-    <h1 class="text-center text-3xl font-bold">
+    <h1 class="text-center text-3xl font-bold mt-5">
         Welcome to user Management System
     </h1>
+    <h2 class="text-center text-2xl font-semibold my-4">Login</h2>
+    <div class="max-w-2xl mx-auto">
+        <form class="flex flex-col gap-3">
+            <input class="p-3 border " type="email" name="email" placeholder="email address" required>
+            <input class="p-3 border" type="text " name="password" placeholder="Enter password" required>
+            <input class="bg-green-400 p-3 cursor-pointer text-white font-semibold" type="submit" value="Submit">
+            
+            <p>Dont have an account? <span class="text-blue-400 cursor-pointer"><a href="register.html">Register</a></span></p>
+        </form>
+    </div>
 </body>
 </html>
