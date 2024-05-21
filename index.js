@@ -19,3 +19,13 @@ const handleRegister=()=>{
     })
 
 }
+const showAllUser=async()=>{
+    const response = await fetch('http://localhost:3000/allusers');
+    const data= await response.json();
+    console.log(data)
+}
+const showSingleUser=async(email)=>{
+    const response = await fetch(`http://localhost:3000/allusers/${email}`);
+    const data= await response.json();
+    console.log(data)
+}
