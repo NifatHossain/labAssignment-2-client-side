@@ -14,12 +14,25 @@
     <h2 class="text-center text-2xl font-semibold my-4">Login</h2>
     <div class="max-w-2xl mx-auto">
         <form class="flex flex-col gap-3">
-            <input class="p-3 border " type="email" name="email" placeholder="email address" required>
-            <input class="p-3 border" type="text " name="password" placeholder="Enter password" required>
-            <input class="bg-green-400 p-3 cursor-pointer text-white font-semibold" type="submit" value="Submit">
+            <input class="p-3 border " type="email" name="email" id="email" placeholder="email address" required>
+            <input class="p-3 border" type="text " name="password" id="password" placeholder="Enter password" required>
+            <input onclick="handleLogIn()" class="bg-green-400 p-3 cursor-pointer text-white font-semibold" type="button" value="Login">
             
             <p>Dont have an account? <span class="text-blue-400 cursor-pointer"><a href="register.html">Register</a></span></p>
         </form>
+        <a href="userData.html">single data</a>
     </div>
+    <script src="index.js"></script>
+    <script>
+        const handleLogIn=()=>{
+            const enteredEmail= document.getElementById('email').value
+            const password= document.getElementById('password').value
+            validateUser(enteredEmail,password);
+            // console.log(promise.promiseState)
+            
+            // showSingleUser(enteredEmail)
+        }
+    </script>
+    
 </body>
 </html>
