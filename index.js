@@ -9,4 +9,13 @@ const handleRegister=()=>{
     const data= {fname,lname,dob,gender,email,password,reTypedPassword}
     console.log(data);
 
+    fetch('http://localhost:3000/adduser', {
+        method: "POST",
+        headers: {'Content-Type': 'application/json'}, 
+        body: JSON.stringify(data)
+    })
+    .then(res=>{
+        console.log('response: ', res)
+    })
+
 }
