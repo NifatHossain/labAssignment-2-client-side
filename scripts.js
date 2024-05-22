@@ -91,7 +91,7 @@ const showSingleUser=async()=>{
             </div>
             
             <input onclick="handleUpdate()" id="updateBtn" class="bg-green-400 p-3 cursor-pointer text-white font-semibold" type="button" value="Update information">
-            <input onclick="handleConfirm()" id="confirmBtn" class="bg-green-400 hidden p-3 cursor-pointer text-white font-semibold" type="button" value="Confirm Update">
+            <input onclick="updateData(${data[0].id})" id="confirmBtn" class="bg-green-400 hidden p-3 cursor-pointer text-white font-semibold" type="button" value="Confirm Update">
         </form>
         <!-- Open the modal using ID.showModal() method -->
             <button class="btn text-white bg-red-400" id="deleteBtn"  onclick="my_modal_5.showModal()">Delete User</button>
@@ -123,6 +123,37 @@ const handleUpdate=()=>{
     document.getElementById('confirmBtn').classList.replace('hidden','block')
     document.getElementById('deleteBtn').classList.add('hidden')
     document.getElementById('updateBtn').classList.add('hidden')
+    
+}
+
+const updateData=(id)=>{
+    const fname = document.getElementById('fname').value;
+    const lname= document.getElementById('lname').value;
+    const gender= document.getElementById('gender').value;
+    const dob= document.getElementById('dob').value;
+    // const email= document.getElementById('email').value;
+    const image= document.getElementById('image').value;
+    const password= document.getElementById('password').value;
+    if(password.length<6){
+        return alert('Password must contain atleast 6 character')
+    }
+    
+    const data= {fname,lname,dob,gender,password,image}
+    console.log(data);
+    fetch(`http://localhost:3000/updatedata/${id}`, {
+        method: "POST",
+        headers: {'Content-Type': 'application/json'}, 
+        body: JSON.stringify(data)
+    })
+    .then(res=>{
+        console.log('response: ', res)
+        if(res.status==200){
+            alert('updated data successfully')
+            setTimeout(()=>{
+                window.location.href = 'userData.html'
+            },0)
+        }
+    })
 }
 
 const handleDelete=(id)=>{
