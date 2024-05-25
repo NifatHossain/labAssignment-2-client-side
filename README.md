@@ -28,3 +28,6 @@ for server site you should open the 'server-site' folder in your vs code . Then 
 then in command prompt run "nodemon index.js" this will make the server run in your port:3000. 
 
 After than you can use the web app properly from the live site in your local PC.
+
+
+N.B: sometimes webApp may not work using live link, In that case kindly clone the client site repository in you pc and run index.html file useing 'go live' or your web browser.

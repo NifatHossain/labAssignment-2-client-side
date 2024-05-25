@@ -100,8 +100,8 @@ const showSingleUser=async()=>{
             <button class="btn text-white bg-red-400" id="deleteBtn"  onclick="my_modal_5.showModal()">Delete User</button>
             <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
             <div class="modal-box">
-                <h3 class="font-bold text-lg">Hello!</h3>
-                <p class="py-4">Press ESC key or click the button below to close</p>
+                <h3 class="font-bold text-lg">Warning!</h3>
+                <p class="py-4">Press the Delete Button to confirm</p>
                 <div class="modal-action">
                 <form method="dialog">
                     <!-- if there is a button in form, it will close the modal -->
