@@ -7,9 +7,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Registration Pade</title>
 </head>
-<body>
+<body class="bg-slate-100 py-6">
     <h2 class="text-3xl font-bold text-center my-5 ">Registration Page</h2>
-    <div class="max-w-2xl mx-auto">
+    <div class="max-w-[350px] md:max-w-2xl mx-auto">
         <form class="flex flex-col gap-3">
             <input class="p-3 border" type="text" name="fname" id="fname" placeholder="Enter first name"  required>
             <input class="p-3 border" type="text" name="lname" id="lname" placeholder="Enter last name" required>
@@ -23,8 +23,8 @@
             </div>   
             <input class="p-3 border" type="email" id="email" name="email" placeholder="Enter email" required>
             <input class="p-3 border" type="text" id="image" name="image" placeholder="Enter image url" required>
-            <input class="p-3 border" type="text" id="password" name="password" placeholder="Enter password" required>
-            <input class="p-3 border" type="text" id="reTypedPassword" name="reTypedPassword" placeholder="ReType Password" required>
+            <input class="p-3 border" type="password" id="password" name="password" placeholder="Enter password" required>
+            <input class="p-3 border" type="password" id="reTypedPassword" name="reTypedPassword" placeholder="ReType Password" required>
             <input onclick="handleRegister()" class="bg-green-400 p-3 cursor-pointer text-white font-semibold" type="button" value="Submit">
             
             <p>Already have an account? <span class="text-blue-400 cursor-pointer"><a href="index.html">Login</a></span></p>

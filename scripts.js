@@ -59,7 +59,7 @@ const showSingleUser=async()=>{
     const userData= document.getElementById('userInfo');
     userData.innerHTML=`
     <h2 class="text-3xl font-bold text-center my-5 ">Personal Information</h2>
-    <div class="max-w-2xl mx-auto flex flex-col gap-4">
+    <div class="max-w-[350px] md:max-w-2xl mx-auto flex flex-col gap-4">
         <div class="flex justify-center">
             <img class="w-80 h-72 border-2" src="${data[0].image}" alt="">
         </div>
@@ -90,7 +90,10 @@ const showSingleUser=async()=>{
                 <input class="p-3 border" value="${data[0].password}" type="text" id="password" name="password" placeholder="Enter password" required>
             </div>
             
-            <input onclick="handleUpdate()" id="updateBtn" class="bg-green-400 p-3 cursor-pointer text-white font-semibold" type="button" value="Update information">
+            <div class="flex gap-4">
+                <input onclick="handleUpdate()" id="updateBtn" class="bg-green-400 w-full rounded-md p-3 cursor-pointer text-white font-semibold" type="button" value="Update information">
+                <input onclick="handleLogOut()" id="logOutBtn" class="bg-gray-400 w-full rounded-md p-3 cursor-pointer text-white font-semibold" type="button" value="Log Out">
+            </div>
             <input onclick="updateData(${data[0].id})" id="confirmBtn" class="bg-green-400 hidden p-3 cursor-pointer text-white font-semibold" type="button" value="Confirm Update">
         </form>
         <!-- Open the modal using ID.showModal() method -->
@@ -123,6 +126,7 @@ const handleUpdate=()=>{
     document.getElementById('confirmBtn').classList.replace('hidden','block')
     document.getElementById('deleteBtn').classList.add('hidden')
     document.getElementById('updateBtn').classList.add('hidden')
+    document.getElementById('logOutBtn').classList.add('hidden')
     
 }
 
@@ -164,7 +168,17 @@ const handleDelete=(id)=>{
         console.log('response: ', res)
     })
     deleteCurrentUser();
+    
+    alert('Deleted successfully')
     // window.location.href = 'index.html';
+}
+
+const handleLogOut=()=>{
+    deleteCurrentUser()
+    alert('Logout Successful')
+    setTimeout(()=>{
+        window.location.href = 'index.html'
+    },0)
 }
 
 const deleteCurrentUser=()=>{
@@ -174,7 +188,6 @@ const deleteCurrentUser=()=>{
     .then(res=>{
         console.log('response: ', res)
         if(res.status==200){
-            alert('Deleted successfully')
             setTimeout(()=>{
                 window.location.href = 'index.html'
             },0)
